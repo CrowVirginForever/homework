@@ -1,0 +1,130 @@
+.hero {
+    padding: 80px 0 140px;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    background: url("../imgs/icons/decor-large-icon.svg") no-repeat;
+    width: 100%;
+    height: 48px;
+    position: absolute;
+    bottom: 246px;
+}
+
+.hero-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.hero-content {
+    max-width: 492px;
+}
+
+.hero-title {
+    font-family: oswald;
+    font-weight: 600;
+    font-size: 62px;
+    line-height: 115%;
+    text-transform: uppercase;
+    color: #2c332f;
+    margin-bottom: 40px;
+}
+
+.hero-text {
+    max-width: 440px;
+}
+
+.accent-text {
+    font-family: oswald;
+    color: #3596ed;
+}
+
+.hero-text {
+    margin-bottom: 140px;
+}
+
+.hero-img-box {
+    max-width: 700px;
+    display: flex;
+    position: relative;
+}
+
+.hero-img-text {
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    transform: translateX(-50%);
+    padding: 22px;
+    background: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    border: 1px solid #535755;
+    max-width: 161px;
+}
+
+/* ======NEWS====== */
+/* ======NEWS====== */
+
+.news {
+    padding-bottom: 140px;
+}
+
+.news-title {
+    margin-bottom: 40px;
+}
+
+.news-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.news-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #d3cbd9;
+}
+
+.news-card-info {
+    padding: 20px 20px 12px;
+}
+
+.news-card-date {
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.news-card-title {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #2c332f;
+}
+
+.news-card footer {
+    padding: 0 20px 20px;
+    margin-top: auto;
+}
+
+.news-card-link {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #3596ed;
+    text-decoration: none;
+    transition: all .3s;
+}
+
+.news-card-link:hover {
+    text-decoration: underline;
+}
+
+.news-card-link::after {
+    content: "";
+    display: inline-block;
+    background: url("../imgs/icons/arrow-right.svg") no-repeat center;
+    width: 22px;
+    height: 9px;
+    margin-left: 8px;
+}
