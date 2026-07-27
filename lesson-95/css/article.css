@@ -1,0 +1,137 @@
+.article {
+    padding: 80px 0 120px;
+}
+
+.article-text {
+    margin-bottom: 20px;
+    font-family: Ubuntu, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+}
+
+.article-mb-1 {
+    margin-bottom: 80px;
+}
+
+.article-mb-2 {
+    margin-bottom: 40px;
+}
+
+.article-decor-wrapper {
+    position: relative;
+}
+
+.article-decor-wrapper-1::before {
+    left: 0px;
+    top: 100px;
+}
+
+.article-decor-wrapper-2::before {
+    right: 0px;
+    top: 328px;
+}
+
+.article-list {
+    padding-left: 16px;
+}
+
+.article-item {
+    margin-bottom: 12px;
+}
+
+.article-item::marker {
+    color: #3596ed;
+    font-size: 22px;
+}
+
+.article-item:last-child {
+    margin-bottom: 0;
+}
+
+.article-video {
+    margin-bottom: 40px;
+}
+
+.article-play-button {
+    border: none;
+    padding: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background-color: #3596ed;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.article-play-button:hover {
+    background-color: #69ace6;
+}
+
+.article-play-button:active {
+    background-color: #2a74b4;
+}
+
+@media (width <= 992px) {
+    .article-decor-wrapper-2::before {
+        top: 50px;
+    }
+}
+
+@media (width <= 768px) {
+    .article-mb-1 {
+        margin-bottom: 60px;
+    }
+
+    .article-title-medium {
+        font-size: 32px;
+    }
+}
+
+@media (width <= 576px) {
+    .article-decor-wrapper::before {
+        display: none;
+    }
+
+    .article {
+        padding: 60px 0 80px;
+    }
+
+    .article-mb-1 {
+        margin-bottom: 40px;
+    }
+    .article-mb-2 {
+        margin-bottom: 20px;
+    }
+
+    .title-large {
+        font-size: 36px;
+    }
+
+    .title-medium {
+        font-size: 28px;
+    }
+
+    .article-play-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .article-play-button img {
+        width: 15px;
+        height: 15px;
+    }
+}
