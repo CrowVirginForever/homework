@@ -1,0 +1,84 @@
+.top-models__product {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
+    grid-auto-rows: 204px;
+    gap: 20px;
+}
+
+.top-models__product-link {
+    gap: 11px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 100%;
+    border: 2px solid var(--accent-color);
+    border-radius: 12px;
+    -webkit-box-shadow:
+        0 0 30px 5px var(--accent-glow-color),
+        inset 0 0 30px 5px var(--accent-glow-color);
+            box-shadow:
+        0 0 30px 5px var(--accent-glow-color),
+        inset 0 0 30px 5px var(--accent-glow-color);
+}
+
+@media (width > 922px) {
+    .top-models__product-link {
+        padding: 28px;
+    }
+}
+@media (width <= 922px) {
+    .top-models__product-link {
+        padding: 18px;
+    }
+}
+
+.top-models__product-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    color: var(--main-color);
+}
+
+.top-models__product-content svg {
+    stroke: currentColor;
+}
+
+.top-models__product-title {
+    -webkit-transition: all var(--transition-time);
+    transition: all var(--transition-time);
+}
+
+.top-models__product-img {
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+}
+
+.top-models__product-img img {
+    width: clamp(156px, 8.293rem + 6.22vw, 190px);
+    -o-object-fit: contain;
+       object-fit: contain;
+}
+
+@media (any-hover: hover) {
+    .top-models__product-link:hover .top-models__product-title,
+    .top-models__product-link:hover svg {
+        color: var(--accent-color);
+    }
+}
