@@ -4,7 +4,7 @@ const number = +prompt("Введите число: ", 0)
 
 if (isNaN(number)) {
     console.log(`Введенное значение не является числом`)
-} else if (number % 2 == 0) {
+} else if (number % 2 === 0) {
     console.log(`${number} - четное число`)
 } else {
     console.log(`${number} - нечетное число`)
@@ -44,10 +44,10 @@ if (!isNaN(age)) {
 }
 
 // Задача 3
-let username = prompt("Введите имя пользователя: ")
-let password = prompt("Введите пароль:")
+const username = prompt("Введите имя пользователя: ")
+const password = prompt("Введите пароль:")
 
-if (username == "admin" || username == "user" && password == "123456") {
+if ((username == "admin" || username == "user") && password == "123456") {
     console.log("Доступ разрешен")
 } else {
     console.log("Доступ запрещен")
@@ -55,36 +55,40 @@ if (username == "admin" || username == "user" && password == "123456") {
 
 
 // Задача 4
-let weight = +prompt("Введите вес посылки (в килограммах): ", 1)
-let deliveryType = prompt("Выберите тип доставки (Стандарт, Экспресс, Премиум): ", "Стандарт")
+const weight = +prompt("Введите вес посылки (в килограммах): ", 1)
 let deliveryBasicPrice
+let deliveryRatio
 
-if (weight <= 0) {
-    alert("Некорректный вес посылки")
-} else if (deliveryType !== "Стандарт" && deliveryType !== "Экспресс" && deliveryType !== "Премиум") {
-    alert("Некорректный тип доставки")
-} else if (weight < 1) {
-    deliveryBasicPrice = 5
-} else if (1 <= weight && weight <= 5) {
-    deliveryBasicPrice = 10
+if (weight <= 0 || isNaN(weight)) {
+    alert("Введите корректный вес")
+
 } else {
-    deliveryBasicPrice = 15
+    const deliveryType = prompt("Выберите тип доставки (Стандарт, Экспресс, Премиум): ", "Стандарт")
+
+    if (deliveryType !== "Стандарт" && deliveryType !== "Экспресс" && deliveryType !== "Премиум") {
+        alert("Некорректный тип доставки")
+    } else if (weight < 1) {
+        deliveryBasicPrice = 5
+    } else if (1 <= weight && weight <= 5) {
+        deliveryBasicPrice = 10
+    } else {
+        deliveryBasicPrice = 15
+    }
+    switch (deliveryType) {
+        case "Стандарт":
+            deliveryRatio = 1
+            break
+        case "Экспресс":
+            deliveryRatio = 1.5
+            break
+        case "Премиум":
+            deliveryRatio = 2
+            break
+        default:
+            alert("Произошла ошибка, попробуйте обновить страницу")
+    }
+
+    let deliveryPrice = deliveryBasicPrice * deliveryRatio
+    alert(`Итоговая стоимость доставки: ${deliveryPrice}$`)
+
 }
-
-switch (true) {
-    case deliveryType == "Стандарт":
-        deliveryRatio = 1
-    break
-    case deliveryType == "Экспресс":
-        deliveryRatio = 1.5
-    break
-    case deliveryType == "Премиум":
-        deliveryRatio = 2
-    break
-    default: 
-    alert("Произошла ошибка, попробуйте обновить страницу")
-}
-
-let deliveryPrice = deliveryBasicPrice * deliveryRatio
-alert(`Итоговая стоимость доставки: ${deliveryPrice}$`)
-
