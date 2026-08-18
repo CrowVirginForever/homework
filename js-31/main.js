@@ -1,0 +1,54 @@
+// Задача 1
+function calculateFinalPrice(basicPrice, discount, tax) {
+
+    return (basicPrice - basicPrice / discount) * (tax + 1)
+}
+
+console.log(calculateFinalPrice(200, 10, 0.2))
+
+// Задача 2
+function checkAccess(userName, password) {
+    if (userName === "admin" && password === "123456") {
+        return "Доступ разрешен"
+    } else {
+        return "Доступ запрещен"
+    }
+}
+
+console.log(checkAccess("admin", "123456"))
+
+// Задача 3
+function getTimeOfDay(currentHour) {
+    if (currentHour < 0 || currentHour > 23) {
+        return "Некорректное время"
+    } else {
+        if (currentHour >= 0 && currentHour <= 5) {
+            return "Ночь"
+        } else if (currentHour >= 6 && currentHour <= 11) {
+            return "Утро"
+        } else if (currentHour >= 12 && currentHour <= 17) {
+            return "День"
+        } else if (currentHour >= 18 && currentHour <= 23) {
+            return "Вечер"
+        }
+    }
+}
+
+console.log(getTimeOfDay(17))
+
+// Задача 4
+function findFirstEven(start, end) {
+    for (let i = start; i <= end; i++) {
+        if (start === end) {
+            return "Четных чисел нет"
+        } else {
+            if (i % 2 === 0) {
+                return i
+            } else {
+                continue
+            }
+        }
+    }
+}
+
+console.log(findFirstEven(19, 9))
