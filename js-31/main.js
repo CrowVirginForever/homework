@@ -51,4 +51,4 @@ function findFirstEven(start, end) {
     }
 }
 
-console.log(findFirstEven(19, 9))
+console.log(findFirstEven(10, 19))
