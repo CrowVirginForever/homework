@@ -1,19 +1,18 @@
 // Задача 1
 function calculateFinalPrice(basicPrice, discount, tax) {
-
-    return (basicPrice - basicPrice / discount) * (tax + 1)
+    const discountValue = basicPrice * discount / 100
+    const afterDiscountPrice = basicPrice - discountValue
+    const taxValue = afterDiscountPrice * tax
+    const totalCost = afterDiscountPrice + taxValue
+    
+    return totalCost
+    
 }
 
-console.log(calculateFinalPrice(200, 10, 0.2))
+console.log(calculateFinalPrice(300, 10, 0.2))
 
 // Задача 2
-function checkAccess(userName, password) {
-    if (userName === "admin" && password === "123456") {
-        return "Доступ разрешен"
-    } else {
-        return "Доступ запрещен"
-    }
-}
+const checkAccess = (userName, password) => userName === "admin" && password === "123456" ? "Доступ разрешен" : "Доступ запрещен";
 
 console.log(checkAccess("admin", "123456"))
 
