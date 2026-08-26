@@ -5,15 +5,16 @@ const person = {
     isStudent: true,
 }
 
+console.log(person)
+
 // Задача 2
 const isEmpty = (object) => {
     for (let key in object) {
         if (key in object) {
             return false
-        } else {
-            return true
         }
     }
+    return true
 }
 
 console.log(isEmpty(person))
@@ -29,7 +30,9 @@ const cloneAndModify = (object, modifications) => {
     return { ...object, ...modifications }
 }
 
-console.log(cloneAndModify(task, person))
+for (const key in cloneAndModify(task, person)) {
+    console.log(key)
+}
 
 // Задача 4
 const callAllMethods = object => {
