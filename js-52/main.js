@@ -41,24 +41,20 @@ console.log(getAllAdmins(users))
 
 // Задача 4
 
-const first = (arr, n) => {
+const first = (arr, n = 1) => {
     const first_n_array = []
 
     if (n <= arr.length) {
-        if (n == 0) {
-        } else if (n == undefined) {
-            first_n_array.push(arr[0])
-        } else {
-            for (let i = 0; i < n; i++) {
-                first_n_array.push(arr[i])
-            }
+        for (let i = 0; i < n; i++) {
+            first_n_array.push(arr[i])
         }
+
         return first_n_array
-    } 
+    }
 
     console.error(
-    `${n} - больше длины массива!`)
-    return 
+        `${n} - больше длины массива!`)
+    return
 }
 
 console.log(first(users, 2))
