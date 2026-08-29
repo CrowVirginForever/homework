@@ -48,23 +48,27 @@ const deleteTodoById = (arr, todoId) => {
 
 }
 
-const form = document.querySelector(".form")
-const input = document.querySelector(".input")
-const todosList = document.querySelector(".todos")
+const formElement = document.querySelector(".form")
+const inputElement = document.querySelector(".input")
+const todosElement = document.querySelector(".todos")
+
+console.log(todosElement)
 
 const createTodoElement = (text) => {
-    todosList.innerHTML += `
-    <li class="todo">
-        <div class="todo-text">Задача ${text}</div>
+    const todoElement = document.createElement("li")
+    todoElement.classList.add("todo")
+    todoElement.innerHTML = `
+        <div class="todo-text">${text}</div>
         <div class="todo-actions">
             <button class="button-complete button">&#10004;</button>
             <button class="button-delete button">&#10006;</button>
         </div>
-    </li>
     `
+    return todoElement
 }
 
 const handleCreateTodo = (todos, text) => {
-    createTodoElement(text)
-    createTodo(todos, text)
+    const todo = createTodo(todos, text)
+    const todoElement = createTodoElement(todo[todoKeys.text])
+    todosElement.prepend(todoElement)
 }
