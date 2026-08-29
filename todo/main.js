@@ -1,4 +1,6 @@
 "use strict"
+
+
 const todoKeys = {
     id: 'id',
     text: 'text',
@@ -7,7 +9,7 @@ const todoKeys = {
 
 const todos = []
 
-const errTodoNotFound = todoId =>`Todo with ID (${todoId}) not found!`
+const errTodoNotFound = todoId => `Todo with ID (${todoId}) not found!`
 
 
 const createTodo = (arr, text) => {
@@ -34,11 +36,13 @@ const completeTodoById = (arr, todoId) => {
 }
 
 const deleteTodoById = (arr, todoId) => {
-    if (todoId > arr.length + 1) {
+    const todoIndex = arr.findIndex(item => item[todoKeys.id] === todoId)
+    if (todoIndex === -1) {
         console.error(errTodoNotFound(todoId))
         return todos
+
     } else {
-        arr.splice(todoId - 1, 1)
+        arr.splice(todoId, 1)
         return todos
     }
 
