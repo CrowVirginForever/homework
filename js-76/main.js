@@ -11,10 +11,12 @@ const todos = []
 
 const errTodoNotFound = todoId => `Todo with ID (${todoId}) not found!`
 
+const getNewTodoId = todos =>
+    todos.reduce((maxId, todo) => Math.max(maxId, todo[todoKeys.id]), 0) + 1;
 
 const createTodo = (arr, text) => {
     const newTodo = {
-        [todoKeys.id]: arr.length + 1,
+        [todoKeys.id]: getNewTodoId(arr),
         [todoKeys.text]: text,
         [todoKeys.isCompleted]: false
     }
@@ -42,7 +44,7 @@ const deleteTodoById = (arr, todoId) => {
         return todos
 
     } else {
-        arr.splice(todoId, 1)
+        arr.splice(todoIndex, 1)
         return todos
     }
 
@@ -72,3 +74,5 @@ const handleCreateTodo = (todos, text) => {
     const todoElement = createTodoElement(todo[todoKeys.text])
     todosElement.prepend(todoElement)
 }
+
+formElement.addEventListener("submit", handleCreateTodo);
