@@ -11,15 +11,19 @@ const todos = []
 
 const errTodoNotFound = todoId => `Todo with ID (${todoId}) not found!`
 
+const getNewTodoId = todos =>
+    todos.reduce((maxId, todo) => Math.max(maxId, todo[todoKeys.id]), 0) + 1;
 
 const createTodo = (arr, text) => {
     const newTodo = {
-        [todoKeys.id]: arr.length + 1,
+        [todoKeys.id]: getNewTodoId(arr),
         [todoKeys.text]: text,
         [todoKeys.isCompleted]: false
     }
 
     arr.push(newTodo)
+
+    console.log(todos)
 
     return newTodo
 }
@@ -42,7 +46,7 @@ const deleteTodoById = (arr, todoId) => {
         return todos
 
     } else {
-        arr.splice(todoId, 1)
+        arr.splice(todoIndex, 1)
         return todos
     }
 
@@ -89,7 +93,7 @@ todosElement.addEventListener("click", ({target}) => {
     if (!todo) return
     const todoId = Number(todo.dataset.id)
 
-    if (event.target.matches(".button-complete")) {
+    if (target.matches(".button-complete")) {
         completeTodoById(todos, todoId)
         todo.classList.toggle("completed")
     }
