@@ -28,10 +28,10 @@ export const deleteTodoById = (arr, todoId) => {
     const todoIndex = arr.findIndex(item => item[todoKeys.id] === todoId)
     if (todoIndex === -1) {
         console.error(errTodoNotFound(todoId))
-        return todos
+        return arr
 
     } else {
         arr.splice(todoIndex, 1)
-        return todos
+        return arr
     }
 }
